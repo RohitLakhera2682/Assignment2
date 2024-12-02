@@ -18,7 +18,7 @@ interface AgentResponse {
 
   }
   
-export default function agents() {
+export default function Agents() {
     const [agents, setAgents]  = useState<AgentResponse[]>([]);
 
     useEffect(() => {
