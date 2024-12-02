@@ -3,17 +3,15 @@ import * as React from "react"
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { ListAgents } from "@/lib/actions/agents"
+import { ListVoices } from "@/lib/actions/agents"
 
 
 export async function SelectScrollable() {
-    const agents = await ListAgents();
+    const agents = await ListVoices();
   return (
     <Select>
       <SelectTrigger className="w-[280px]">
@@ -21,7 +19,7 @@ export async function SelectScrollable() {
       </SelectTrigger>
       <SelectContent>
         {agents.map(agent => {
-                return <SelectItem value={agent.voice_id} >{agent.voice_name}</SelectItem>
+                return <SelectItem key={agent.voice_id} value={agent.voice_id} >{agent.voice_name}</SelectItem>
         })}
       </SelectContent>
     </Select>

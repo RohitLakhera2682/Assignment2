@@ -10,9 +10,9 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { ListAgents } from "@/lib/actions/agents"
+import { ListVoices } from "@/lib/actions/agents"
 
-const voices= await ListAgents();
+const voices= await ListVoices();
 
 
 // This is sample data.
@@ -47,17 +47,16 @@ const data = {
       ],
     },
     {
-      title: "Calendar",
-      url: "#",
+      title: "Agents",
+      url: "/agents",
       items: [
+        {
+          title: "Show Agents",
+          url: "/agents"
+        }
       ]
     },
-    {
-      title: "Tasks",
-      url: "#",
-      items: [
-      ],
-    },
+    
   ],
 }
 

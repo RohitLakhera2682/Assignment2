@@ -6,7 +6,7 @@ const client = new Retell({
   apiKey: process.env.RETELL_API || "",
 });
 
-export async function ListAgents() {
+export async function ListVoices() {
   const voiceResponses = await client.voice.list();
 
   return voiceResponses;
@@ -21,6 +21,15 @@ export async function CreateAgents() {
   
     console.log(agentResponse.agent_id); 
 }
+
+
+
+export async function ListAgents() {
+  const agentResponses = await client.agent.list();
+
+  return agentResponses;
+}
+
 
     // async function getAgents() {
     //   const agentResponse = await client.agent.retrieve('16b980523634a6dc504898cda492e939');
